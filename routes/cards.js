@@ -1,9 +1,9 @@
 const cards = require('express').Router()
-const jsonReader = require('../modules/jsonreader')
 const path = require('path')
+const jsonReader = require('../modules/jsonreader')
 
 const readCardsList = (req, res) => {
-  const getObject = data => {
+  const getObject = (data) => {
     if (data !== undefined) {
       res.send(data)
     } else {
