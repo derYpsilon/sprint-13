@@ -1,5 +1,4 @@
 const users = require('express').Router()
-// const User = require('../models/user')
 const { createUser, getAllUsers, getSingleUser } = require('../controllers/users')
 
 users.post('/', createUser)
