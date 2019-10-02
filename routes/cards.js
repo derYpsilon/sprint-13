@@ -1,18 +1,9 @@
 const cards = require('express').Router()
-const jsonReader = require('../modules/jsonreader')
-const path = require('path')
+const { createCard, getAllCards, deleteCard } = require('../controllers/cards')
 
-const readCardsList = (req, res) => {
-  const getObject = data => {
-    if (data !== undefined) {
-      res.send(data)
-    } else {
-      res.send({ message: 'Can not read .json file' })
-    }
-  }
-  jsonReader(path.join(__dirname, '../data/cards.json'), getObject)
-}
-
-cards.get('/', readCardsList)
+console.log('router')
+cards.post('/', createCard)
+cards.get('/', getAllCards)
+cards.delete('/:id', deleteCard)
 
 module.exports = cards
