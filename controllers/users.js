@@ -16,5 +16,5 @@ module.exports.getAllUsers = (req, res) => {
 module.exports.getSingleUser = (req, res) => {
   User.findById(req.params.id)
     .then((user) => res.send({ data: user }))
-    .catch(() => res.status(500).send({ message: 'Server Controller Error while searching Single User' }))
+    .catch(() => res.status(500).send({ message: 'Нет пользователя с таким id' }))
 }
