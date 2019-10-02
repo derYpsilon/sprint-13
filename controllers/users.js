@@ -18,3 +18,19 @@ module.exports.getSingleUser = (req, res) => {
     .then((user) => res.send({ data: user }))
     .catch(() => res.status(500).send({ message: 'Нет пользователя с таким id' }))
 }
+
+module.exports.updateUser = (req, res) => {
+  const { name, about } = req.body
+  User.findByIdAndUpdate(req.user._id, { name, about }, { runValidators: true })
+    .then((user) => res.send({ data: user }))
+    .catch((err) => res.status(500).send({ message: `Произошла ошибка при обновлении профиля ${err}` }))
+}
+
+module.exports.updateAvatar = (req, res) => {
+  const { avatar } = req.body
+  User.findByIdAndUpdate(req.user._id, { avatar }, { runValidators: true })
+    .then((user) => {
+      res.send({ data: user })
+    })
+    .catch((err) => res.status(500).send({ message: `Произошла ошибка при обновлении аватара ${err}` }))
+}
