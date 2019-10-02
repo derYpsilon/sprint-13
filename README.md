@@ -13,7 +13,8 @@
 
 В качестве дополнительного задания реализуйте ещё четыре роута:
 
-PATCH /users/me — обновить профиль
-PATCH /users/me/avatar — обновить аватар
-PUT /cards/:cardId/likes — поставить лайк карточке
-DELETE /cards/:cardId/likes — поставить лайк карточке
+* PATCH /users/me — обновить профиль
+* PATCH /users/me/avatar — обновить аватар
+* PUT /cards/:cardId/likes — поставить лайк карточке
+* DELETE /cards/:cardId/likes — поставить лайк карточке
+
